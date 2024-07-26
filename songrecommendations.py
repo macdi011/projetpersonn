@@ -57,8 +57,26 @@ def song_recommendation_vis(reco_df):
     
 
 def save_album_image(img_url, track_id):
-    r = requests.get(img_url)
-    open('img/' + track_id + '.jpg', "wb").write(r.content)
-    
-def get_album_mage(track_id):
-    return Image.open('img/' + track_id + '.jpg')
+    try:
+        # Vérifier si le répertoire existe, sinon le créer
+        if not os.path.exists('img'):
+            os.makedirs('img')
+
+        # Récupérer l'image depuis l'URL
+        r = requests.get(img_url)
+
+        # Enregistrer l'image dans le répertoire img/
+        with open(f'img/{track_id}.jpg', 'wb') as f:
+            f.write(r.content)
+
+    except Exception as e:
+        print(f"Error saving album image: {e}")
+
+def get_album_image(track_id):
+    image_path = f'img/{track_id}.jpg'
+    if os.path.exists(image_path):
+        with open(image_path, 'rb') as f:
+            image = f.read()
+        return image
+    else:
+        return None
