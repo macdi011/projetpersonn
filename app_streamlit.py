@@ -3,7 +3,7 @@ import pandas as pd
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import polarplot
- import songrecommendations
+import songrecommendations
 
 SPOTIPY_CLIENT_ID = 'e18fafeb60a949d2a9b7d1efccabe69a'
 SPOTIPY_CLIENT_SECRET = '739bbbed49864382a64a64ccd64ecdcc'
@@ -194,4 +194,3 @@ if selected_artist is not None and len(artists) > 0:
                         similar_songs_state = st.button('Similar Songs', key=track['id'], on_click=similar_songs_requested)
 
                     st.write('----')
-
