@@ -43,7 +43,7 @@ if search_keyword is not None and len(str(search_keyword)) > 0:
             for artist in artists_list:
                 search_results.append(artist['name'])
 
-    if search_selected == 'Album':
+    elif search_selected == 'Album':
         st.write("Start album search")
         albums = sp.search(q='album:' + search_keyword, type='album', limit=20)
         albums_list = albums['albums']['items']
@@ -76,7 +76,7 @@ if selected_track is not None and len(tracks) > 0:
 
     selected_track_choice = None
     if track_id is not None:
-        image = songrecommendations.get_album_image(track_id)  # Correction ici
+        image = songrecommendations.get_album_image(track_id)
         st.image(image)
         track_choices = ['Song Features', 'Similar Songs Recommendation']
         selected_track_choice = st.sidebar.selectbox('Please select track choice: ', track_choices)
