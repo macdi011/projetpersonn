@@ -3,19 +3,23 @@ import requests
 
 def get_token(clientId, clientSecret):
     # Fonction pour récupérer le token Spotify
-    # Code de votre fonction existante
+    # Insérez ici votre code existant pour récupérer le token
+    pass
 
 def get_track_recommendations(seed_tracks, token):
     # Fonction pour récupérer les recommandations de pistes Spotify
-    # Code de votre fonction existante
+    # Insérez ici votre code existant pour obtenir les recommandations de pistes
+    pass
 
 def song_recommendation_vis(reco_df):
     # Fonction pour visualiser les recommandations de chansons
-    # Code de votre fonction existante
+    # Insérez ici votre code existant pour la visualisation des recommandations de chansons
+    pass
 
 def save_album_image(img_url, track_id):
     # Fonction pour enregistrer l'image d'album
-    # Code de votre fonction existante
+    # Insérez ici votre code existant pour enregistrer l'image d'album
+    pass
 
 def get_album_image(track_id):
     # Fonction pour récupérer l'image d'album
